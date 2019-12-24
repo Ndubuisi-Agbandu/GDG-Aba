@@ -4,65 +4,14 @@
     <meta charset="utf-8">
     <title> Expense Tracker </title>
     <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-      body {margin: 0;}
-
-      a {
-        text-decoration: none;
-        color: white;
-      }
-
-      div.navbar {
-        box-shadow: 5px 5px 5px lightgrey;
-        padding: 10px;
-      }
-      div.navbar h2 {
-        margin: 0;
-        font-family: arial black;
-      }
-
-      div.input {
-        margin-top: 30px;
-        padding: 0 200px;
-      }
-
-      div.input input {
-        padding: 10px;
-        margin: 0 20px;
-        outline: none;
-      }
-
-      div.inputBox {
-        width: 500px;
-        border-radius: 20px;
-        margin: 30px auto;
-        padding: 20px 0;
-        box-shadow: 5px 5px 5px 5px lightgrey;
-      }
-
-      div.inputBox div.addDel {
-        background-color: red;
-        padding: 15px;
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      div#userInput input {
-        padding: 15px;
-        margin: 10px;
-        outline: none;
-      }
-
-      div#userInput a {
-         margin-right: 25px;
-        font-size: 20px;
-        color: red;
-      }
+      
     </style>
   </head>
   <body>
     <div class="navbar">
-      <h2>Expense<span style="color: forestgreen;">Tracker</span></h2>
+      <h2>Expense<span style="color: red;">Tracker</span></h2>
     </div>
 
     <div class="input">
@@ -71,17 +20,18 @@
       Balance: <input type="number" id="balance" name="budget" placeholder="Balance">
     </div>
 
-    <div class="inputBox">
-      <div class="addDel">
-        <a href="" onclick="add()" type="button" id="add" title="Add Item" style="margin-right: 25px; font-size: 20px;" <i class="fa fa-plus"></i></a>
-        <a href="#" type="button" style="margin-right: 25px; font-size: 20px;" id="remove" onclick="deleteAll()" title="Delete All" <i class="fa fa-close"></i></a>
+    <div class="inputBox" id="inputBox">
+      <div class="addDelSave">
+        <a href="#" title="Save" id="saveButton"><i style=" font-weight: 900" class="fa fa-save"></i></a>
+        <a href="#" onclick="return addInputElements()" type="button" id="add" title="Add Item"><i class="fa fa-plus"></i></a>
+        <a href="#" type="button" id="remove" onclick="return removeAll()" title="Delete All" <i class="fa fa-close"></i></a>
       </div>
 
       <div id="userInput">
-        <div id="userInputChild" class="userInputChild">
+        <div id="userInputChild">
           <input type="text" id="item" placeholder="Item">
-          <input type="number" name="" onkeyup="itemPriceInput()" id="price" placeholder="price">
-          <a href="#" onclick="remove()" title="Delete Item"<i class="fa fa-close"></i></a>
+          <input placeholder="Price" type="number" name="" onkeyup="itemPriceInput()" class="price" id="price">
+          <a href="#" id="close" onclick="return remove()" title="Delete Item"<i class="fa fa-close"></i></a>
         </div>
       </div>
     <script src="script.js" charset="utf-8"></script>

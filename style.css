@@ -1,0 +1,57 @@
+body {margin: 0;}
+
+a {
+	text-decoration: none;
+}
+
+div.navbar {
+	box-shadow: 5px 5px 5px lightgrey;
+	padding: 10px;
+}
+div.navbar h2 {
+	margin: 0;
+	font-family: arial black;
+}
+
+div.input {
+	margin-top: 30px;
+	padding: 0 200px;
+}
+
+div.input input {
+	padding: 10px;
+	margin: 0 20px;
+	outline: none;
+}
+
+div.inputBox {
+	width: 500px;
+	border-radius: 20px;
+	margin: 30px auto;
+	padding: 20px 0;
+	box-shadow: 5px 5px 5px 5px lightgrey;
+}
+
+div.inputBox div.addDelSave {
+	background-color: red;
+	padding: 15px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+div#userInput input {
+	padding: 15px;
+	margin: 10px;
+	outline: none;
+}
+
+div#userInput a {
+	font-size: 20px;
+	color: red;
+}
+
+div.addDelSave a {
+	margin-right: 25px;
+	font-size: 20px;
+	color: white;
+}
