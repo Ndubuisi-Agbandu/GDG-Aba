@@ -1,33 +1,41 @@
 let userBudget, userTotal, userBalance, total, balance, itemPrice;
 
-function userBudgetInput() {
-	// What this function is doing is to take the value of the user's Budget that set and display it in the Balance input box.
-	userBudget = document.getElementById("budget").value;
-	document.getElementById("balance").value = userBudget;
-}
 
-function itemPriceInput() {
+userBudget = document.querySelector('#budget');  // Get the value of the user's budget.
+userBudget.addEventListener('keyup', function() {
+	// Get the value user's budget.
+	userBudget = document.getElementById("budget").value;
+	// Set the user's balance to the value of the user's budget.
+	document.getElementById("balance").value = userBudget;
+});
+
+
+
+
+function deductPriceFromBalance() {
+	// Get the value of the price of the first item.
 	itemPrice = document.getElementById("price").value;
+	// The balance should equals, the user's budget minus the item's price.
 	document.getElementById("balance").value = userBudget - itemPrice;
+	// The total should equals the item's price.
 	document.getElementById("total").value = itemPrice;
 }
 
-function addInputElements() {
+
+
+let addInputElements = document.querySelector('#add');
+addInputElements.addEventListener('click', function() {
 	let userInputDiv = document.getElementById('userInput');
 	let parent = document.createElement('div');
 	parent.id = 'userInputChild';
 	let itemInputElement = document.createElement('input');
 	itemInputElement.id = 'item';
-	let itemInputElementAttribute = document.createAttribute('placeholder');
-	itemInputElementAttribute.value = 'Item';
-	itemInputElement.setAttributeNode(itemInputElementAttribute);
+	itemInputElement.setAttribute('placeholder', 'Item');
 	parent.appendChild(itemInputElement);
 
 	let priceInputElement = document.createElement('input');
 	priceInputElement.id = 'price';
-	let priceInputElementAttribute = document.createAttribute('placeholder');
-	priceInputElementAttribute.value = 'Price';
-	priceInputElement.setAttributeNode(priceInputElementAttribute);
+	priceInputElement.setAttribute('placeholder', 'Price');
 	parent.appendChild(priceInputElement);
 
 	let closeButton = document.createElement('a');
@@ -38,16 +46,22 @@ function addInputElements() {
 
 	closeButton.addEventListener('click', function (e) {
 		e.target.parentNode.remove();
-	})
-}
+	});
+});
 
 
-function remove() {
+
+
+let removeSingleElementButton = document.querySelector('#close');
+removeSingleElementButton.addEventListener('click', function() {
 	let child = document.getElementById('userInputChild');
 	child.remove();
-}
+});
 
-function removeAll() {
+
+
+let removeAllButton = document.querySelector('#removeAll');
+removeAllButton.addEventListener('click', function() {
 	let userInputDiv = document.querySelector('#userInput');
 	userInputDiv.innerHTML = '';
-}
+});

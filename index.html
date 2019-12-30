@@ -15,7 +15,7 @@
     </div>
 
     <div class="input">
-      Budget: <input type="number" id="budget" onkeyup="userBudgetInput()" name="budget" placeholder="Budget">
+      Budget: <input type="number" id="budget" name="budget" placeholder="Budget">
       Total: <input type="number" id="total" name="budget" placeholder="Total">
       Balance: <input type="number" id="balance" name="budget" placeholder="Balance">
     </div>
@@ -23,17 +23,20 @@
     <div class="inputBox" id="inputBox">
       <div class="addDelSave">
         <a href="#" title="Save" id="saveButton"><i style=" font-weight: 900" class="fa fa-save"></i></a>
-        <a href="#" onclick="return addInputElements()" type="button" id="add" title="Add Item"><i class="fa fa-plus"></i></a>
-        <a href="#" type="button" id="remove" onclick="return removeAll()" title="Delete All" <i class="fa fa-close"></i></a>
+        <a href="#" type="button" id="add" title="Add Item"><i class="fa fa-plus"></i></a>
+        <a href="#" type="button" id="removeAll" title="Delete All" <i class="fa fa-close"></i></a>
       </div>
 
       <div id="userInput">
         <div id="userInputChild">
           <input type="text" id="item" placeholder="Item">
-          <input placeholder="Price" type="number" name="" onkeyup="itemPriceInput()" class="price" id="price">
-          <a href="#" id="close" onclick="return remove()" title="Delete Item"<i class="fa fa-close"></i></a>
+          <input placeholder="Price" type="number" onkeyup="deductPriceFromBalance()" id="price">
+          <a href="#" id="close" title="Delete Item"<i class="fa fa-close"></i></a>
         </div>
       </div>
+
+    </div>
+      
     <script src="script.js" charset="utf-8"></script>
   </body>
 </html>
