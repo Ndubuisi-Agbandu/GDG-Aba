@@ -55,3 +55,15 @@ div.addDelSave a {
 	font-size: 20px;
 	color: white;
 }
+
+input#searchField {
+	color: white;
+	border: none; 
+	border-bottom: 1px solid rgb(173, 171, 171);
+	background-color: transparent;
+	padding: 0 10px;
+}
+
+input#searchField:focus {
+	outline: none;
+}
