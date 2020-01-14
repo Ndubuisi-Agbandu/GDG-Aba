@@ -5,10 +5,13 @@ a {
 }
 
 div.navbar {
+	display: flex;
+	align-items: center;
 	box-shadow: 5px 5px 5px lightgrey;
 	padding: 10px;
 }
-div.navbar h2 {
+
+div.navbar h2, div.navbar h3 {
 	margin: 0;
 	font-family: arial black;
 }
@@ -19,6 +22,7 @@ div.input {
 }
 
 div.input input {
+	width: 200px;
 	padding: 10px;
 	margin: 0 20px;
 	outline: none;

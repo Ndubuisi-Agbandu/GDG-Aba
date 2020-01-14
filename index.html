@@ -12,11 +12,12 @@
   <body>
     <div class="navbar">
       <h2>Expense<span style="color: red;">Tracker</span></h2>
+      <h3 style="margin-left: 100px;">Click the plus sign to add items...</h3>
     </div>
 
     <div class="input">
-      Budget: <input type="number" id="budget" name="budget" placeholder="Budget">
-      Total: <input type="number" id="total" name="budget" placeholder="Total">
+      Budget: <input type="number" id="budget" name="budget" placeholder="How Much is Your Budget ..." onkeyup="getValueOfBudget()">
+      Total: <input type="number" id="total" name="budget" placeholder="This Field Cannot Be Filled" readonly>
       Balance: <input type="number" id="balance" name="budget" placeholder="Balance">
     </div>
 
@@ -30,9 +31,11 @@
 
       <div id="userInput">
         <div id="userInputChild">
-          <input type="text" id="item" placeholder="Item">
-          <input placeholder="Price" type="number" id="price">
-          <a href="#" id="close" title="Delete Item"<i class="fa fa-close"></i></a>
+          <!-- <form action="" id="myForm">
+            <input type="text" id="item" placeholder="Item" required>
+            <input placeholder="Price" type="number" id="price" required>
+            <a href="#" id="remove" title="Remove"<i class="fa fa-close"></i></a>
+          </form> -->
         </div>
       </div>
     </div>
